@@ -1,0 +1,215 @@
+/* open-sans-regular - latin_cyrillic-ext_cyrillic */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/open-sans-v27-latin_cyrillic-ext_cyrillic-regular.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('../fonts/open-sans-v27-latin_cyrillic-ext_cyrillic-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/open-sans-v27-latin_cyrillic-ext_cyrillic-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/open-sans-v27-latin_cyrillic-ext_cyrillic-regular.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/open-sans-v27-latin_cyrillic-ext_cyrillic-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/open-sans-v27-latin_cyrillic-ext_cyrillic-regular.svg#OpenSans') format('svg'); /* Legacy iOS */
+}
+/* open-sans-600 - latin_cyrillic-ext_cyrillic */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: url('../fonts/open-sans-v27-latin_cyrillic-ext_cyrillic-600.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('../fonts/open-sans-v27-latin_cyrillic-ext_cyrillic-600.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/open-sans-v27-latin_cyrillic-ext_cyrillic-600.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/open-sans-v27-latin_cyrillic-ext_cyrillic-600.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/open-sans-v27-latin_cyrillic-ext_cyrillic-600.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/open-sans-v27-latin_cyrillic-ext_cyrillic-600.svg#OpenSans') format('svg'); /* Legacy iOS */
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    padding: 70px;
+    font-family: 'Open Sans';
+    font-weight: 400;
+    font-size: 14px;
+    background: #424242;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* CHECKBOX */
+
+.custom-checkbox {
+    display: inline-block;
+    margin-right: 58px;
+    padding: 30px;
+    border-radius: 10px;
+    background: white;
+    color: #333333;;
+}
+
+h2 {
+    margin: 0;
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.checkbox-item:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+.checkbox-label {
+    position: relative;
+    padding-left: 24px;
+    cursor: pointer;
+}
+
+.checkbox-input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.checkbox-sign {
+    position: absolute;
+    left: 0;
+    top: auto;
+    width: 15px;
+    height: 15px;
+    border: 1px solid #999;
+    border-radius: 3px;
+    transition: border-color .1s ease ;
+}
+
+.checkbox-sign::after {
+    content: '';
+    position: absolute;
+    /* display: none; */
+    opacity: 0;
+    left: 4.5px;
+    top: 2px;
+    width: 3px;
+    height: 6px;   
+    border: solid #CCB26E;
+    border-width: 0px 1px 1px 0px;
+    transform: rotate(45deg);
+    transition: opacity .1s ease;
+}
+
+.checkbox-input:checked ~ .checkbox-sign {
+    border-color: #CCB26E;
+}
+
+.checkbox-input:checked ~ .checkbox-sign::after {
+    /* display: block; */
+    opacity: 1;
+}
+
+/* SELECT */
+
+.select-block {
+    margin-right: 58px;
+}
+
+.choices {
+    background: white;
+    border: 0;
+    border-radius: 10px;
+}
+
+.choices.is-focused.is-open {
+    border: 1px solid #CCB26E;
+
+}
+
+.choices__inner {
+    width: 176px;
+    background: transparent;
+    vertical-align: center;
+    border: 0;
+    border-radius: 10px;
+}
+
+.choices__list--single {
+    padding: auto 16px auto 0;
+}
+
+.is-open .choices__inner {
+    border: 0;
+    border-radius: 10px;
+}
+
+.choices__placeholder {
+    color: #333;
+    opacity: 1;
+}
+
+.choices__list.is-active .choices__placeholder {
+    display: none;
+}
+
+.choices[data-type*=select-one]::after {
+    height: 8px;
+    width: 8px;
+    top: 18px;
+    right: 14.5px;
+    border: solid #666;
+    border-width: 0px 1px 1px 0px;
+    transform: rotate(45deg);
+}
+
+.choices[data-type*=select-one].is-ipen::after {
+    border-width: 1px 0px  0px 1px;
+}
+
+
+/* MAP */
+
+#map {
+    margin-right: 58px;
+}
+
+[class*="ground-pane"] {
+    filter: grayscale(1);
+}
+
+/* SCROLL */
+
+.customScroll {
+    width: 399px;
+    height: 310px;
+    background: white;
+    padding: 20px 30px;
+}
+
+.simplebar-content-wrapper {
+      overflow: auto;
+    }
+
+.simplebar-scrollbar::before {
+  background: #CCB26E;
+  border-radius: 5px;
+  right: 6px;
+  /* height: ; */
+}
+
+.simplebar-scrollbar.simplebar-visible::before {
+    opacity: 1;
+}
+.simplebar-track.simplebar-vertical {
+    width: 14px;
+}
+
+.simplebar-track.simplebar-vertical .simplebar-scrollbar:before {
+  top: 7px;
+  bottom: 7px;
+}
